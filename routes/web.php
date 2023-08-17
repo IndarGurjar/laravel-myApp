@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\demoController;
+use App\Http\Controllers\photoController;
+use App\Http\Controllers\singleActionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/contant', function () {
-    return view('contant');
-});
-
-Route::get('/post', function () {
-    return view('post');
-});
+Route::get('/', [demoController::class, 'index']);
+Route::get('courses', singleActionController::class);
+Route::resource('/photo', photoController::class);
