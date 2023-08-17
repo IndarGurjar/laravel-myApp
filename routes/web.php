@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [demoController::class, 'index']);
+Route::get('register', [demoController::class, 'index']);
 Route::get('courses', singleActionController::class);
 Route::resource('/photo', photoController::class);
+
+Route::post('register', [demoController::class, 'register']);
